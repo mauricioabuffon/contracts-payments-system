@@ -2,6 +2,10 @@ package model.service;
 
 public class PayPalService implements OnLinePaymentService{
 
+	public PayPalService() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public double paymentFee(double amount) {
 		// TODO Auto-generated method stub

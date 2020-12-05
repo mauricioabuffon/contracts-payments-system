@@ -26,16 +26,21 @@ public class Program {
 		Date dateStart = sdf.parse(sc.next());
 		System.out.print("Total value: ");
 		double totalValue = sc.nextDouble();
-
+		// Instancing new contract
 		Contract contract = new Contract(contractNumber, dateStart, totalValue);
 
 		System.out.print("Months number: ");
 		int monthsNumber = sc.nextInt();
-
+		// Instancing Contract service to PayPal
 		ContractService contractService = new ContractService(new PayPalService());
+
+		// Calculating Fees and interest month-to-month
+		// Writing installments month-to-month 
 		contractService.processContract(contract, monthsNumber);
 
 		System.out.println("Installments: ");
+
+		// reading Installment list of a contract and printing results
 		for (Installment it : contract.getInstallments()) {
 			System.out.println(it);
 		}

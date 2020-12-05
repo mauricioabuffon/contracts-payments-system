@@ -16,6 +16,7 @@ public class ContractService {
 
 	public void processContract(Contract contract, int months) {
 		double basicQuote = contract.getContractValue() / months;
+		// give the results to payment monthly
 		for (int i = 1; i <= months; i++) {
 			double updatedQuote = basicQuote + onLinePaymentService.interest(basicQuote, i);
 			double fullQuote = updatedQuote + onLinePaymentService.paymentFee(updatedQuote);
